@@ -11,16 +11,16 @@ class App extends Component {
   }
   async componentDidMount () {
     const fetchedData = await fetchData()
-    console.log('fetchedData:',fetchedData)
+    // console.log('fetchedData:',fetchedData)
     this.setState({data: fetchedData})
-    console.log('fetchedData:',fetchedData)
+    // console.log('fetchedData:',fetchedData)
   }
   render() {
     return (
       <div className={styles.container}>
         <Cards data={this.state.data} />
-        <Chart />
         <CountryPicker />
+        <Chart />
       </div>
     );
   }
