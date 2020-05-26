@@ -8,20 +8,19 @@ const Cards = (props) => {
   if (!props.data.confirmed) {
     return "Loading";
   }
-  // console.log("props:", props);
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
           <CardContent>
-            <Typography style={{color:"#00e676"}} gutterBottom>
+            <Typography style={{color:"blue"}} gutterBottom>
               Infected
             </Typography>
             <Typography variant="h4">
               <CountUp
                 start={0}
                 end={props.data.confirmed.value}
-                duration={2}
+                duration={2.3}
                 seperator=","
               />
             </Typography>
@@ -35,14 +34,14 @@ const Cards = (props) => {
         </Grid>
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
           <CardContent>
-            <Typography style={{color:"blue"}} gutterBottom>
+            <Typography style={{color:"#00e676"}} gutterBottom>
               Recovered
             </Typography>
             <Typography variant="h4">
               <CountUp
                 start={0}
                 end={props.data.recovered.value}
-                duration={2}
+                duration={2.7}
                 seperator=","
               />
             </Typography>
@@ -63,7 +62,7 @@ const Cards = (props) => {
               <CountUp
                 start={0}
                 end={props.data.deaths.value}
-                duration={2}
+                duration={3.1}
                 seperator=","
               />
             </Typography>
